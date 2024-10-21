@@ -13,6 +13,6 @@ A simple project aiming to learn how to deconstruct API responses and parse them
 Anything the require a key you can use the weather.go file as reference and install the go env package and add your relevant `.env` files to your calls.
 
 ### TODO's
-[ ] - Tests (*mainly for api files*)
-[ ] - Further abstractions on case statement in main function
-[ ] - Create req and response function for handling calls to API in main function
+[ ] Tests (*mainly for api files*)
+[ ] Further abstractions on case statement in main function
+[ ] Create req and response function for handling calls to API in main function
