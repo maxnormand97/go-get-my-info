@@ -27,9 +27,9 @@ func main() {
 	fmt.Print(renderWelcomeText())
 	// putting the application in a for loop makes it recursively run
 	for {
-		fmt.Println("Enter 'chess' to get chess players" +
+		fmt.Print("Enter 'chess' to get the daily chess Puzzle" +
 			"\nor 'cat' to get cat facts" +
-			"\nor 'exit' to leave the application:")
+			"\nor 'exit' to leave the application:\n")
 
 		var input string
 		_, err := fmt.Scanln(&input)
@@ -39,14 +39,15 @@ func main() {
 
 		switch strings.ToLower(input) {
 		case "chess":
+			// TODO: could have a handle API call function that does this
 			fmt.Println(printApiCall("Chess"))
-			players, err := api.GetChessPlayers()
+			res, err := api.GetChessPuzzle()
 			if err != nil {
 				panic(err)
 			}
-
-			first10Players := players[:10]
-			fmt.Println(first10Players)
+			fmt.Println(res)
+			fmt.Println()
+			fmt.Println()
 		case "cat":
 			fmt.Println(printApiCall("Cat"))
 			catFacts, err := api.GetCatFacts()

@@ -1,0 +1,8 @@
+{
+    "title": "Second Rank Save, Back Rank Bliss",
+    "url": "https://www.chess.com/daily-chess-puzzle/2024-10-20",
+    "publish_time": 1729407600,
+    "fen": "6k1/1P3pb1/2P3p1/2Q5/P7/4p1Bq/3r3P/2R3K1 w - - 0 44",
+    "pgn": "[Event \"Live Chess\"]\r\n[Site \"Chess.com\"]\r\n[Date \"2024.09.14\"]\r\n[Round \"?\"]\r\n[White \"(Missed Opportunity)Jeffpk\"]\r\n[Black \"SamCopeland\"]\r\n[Result \"*\"]\r\n[ECO \"B04\"]\r\n[WhiteElo \"2396\"]\r\n[BlackElo \"2424\"]\r\n[FEN \"6k1/1P3pb1/2P3p1/2Q5/P7/4p1Bq/3r3P/2R3K1 w - - 0 44\"]\r\n\r\n44. Qd5 Rxd5 45. c7 Rd2 46. c8=Q+ Kh7 47. Qxh3+ *",
+    "image": "https://www.chess.com/dynboard?fen=6k1/1P3pb1/2P3p1/2Q5/P7/4p1Bq/3r3P/2R3K1%20w%20-%20-%200%2044&size=2"
+}

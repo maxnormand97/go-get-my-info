@@ -9,29 +9,28 @@ import (
 	"maxnormand/get-my-info/models"
 )
 
-func GetChessPlayers() ([]string, error) {
-	res, err := http.Get("https://api.chess.com/pub/titled/GM")
+func GetChessPuzzle() (string, error) {
+	fmt.Println("Fetching the Daily Chess puzzle...")
+	res, err := http.Get("https://api.chess.com/pub/puzzle")
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 	defer res.Body.Close()
 
 	if res.StatusCode != 200 {
-		return nil, fmt.Errorf("chess API down")
+		return "", fmt.Errorf("chess API down")
 	}
 
 	body, err := io.ReadAll(res.Body)
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
-	var topChessPlayers models.ChessPlayers
-	err = json.Unmarshal(body, &topChessPlayers)
+	var dailyPuzzleRes models.DailyPuzzleResponse
+	err = json.Unmarshal(body, &dailyPuzzleRes)
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
-	// TODO: here need to handle a better way to format the req from the chess masters
-
-	return topChessPlayers.Players, nil
+	return dailyPuzzleRes.URL, nil
 }

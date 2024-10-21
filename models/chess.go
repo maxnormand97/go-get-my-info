@@ -1,5 +1,7 @@
 package models
 
-type ChessPlayers struct {
-	Players []string `json:"players"`
+type DailyPuzzleResponse struct {
+	Title string `json:"title"`
+	URL   string `json:"url"`
+	Image string `json:"image"`
 }
