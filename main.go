@@ -9,14 +9,22 @@ import (
 	"maxnormand/get-my-info/api"
 )
 
-func main() {
+func renderWelcomeText() string {
 	ascii := figlet4go.NewAsciiRender()
 	options := figlet4go.NewRenderOptions()
 	options.FontName = "larry3d"
 
 	renderStr, _ := ascii.Render("Good Morning!")
-	fmt.Print(renderStr)
+	return renderStr
+}
 
+func printApiCall(text string) string {
+	message := fmt.Sprintf("Going to get your %s info...", text)
+	return message
+}
+
+func main() {
+	fmt.Print(renderWelcomeText())
 	// putting the application in a for loop makes it recursively run
 	for {
 		fmt.Println("Enter 'chess' to get chess players" +
@@ -31,6 +39,7 @@ func main() {
 
 		switch strings.ToLower(input) {
 		case "chess":
+			fmt.Println(printApiCall("Chess"))
 			players, err := api.GetChessPlayers()
 			if err != nil {
 				panic(err)
@@ -39,6 +48,7 @@ func main() {
 			first10Players := players[:10]
 			fmt.Println(first10Players)
 		case "cat":
+			fmt.Println(printApiCall("Cat"))
 			catFacts, err := api.GetCatFacts()
 			if err != nil {
 				panic(err)
