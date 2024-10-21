@@ -1,0 +1,41 @@
+{
+    "request": {
+        "type": "LatLon",
+        "query": "Lat 37.83 and Lon 122.42",
+        "language": "en",
+        "unit": "m"
+    },
+    "location": {
+        "name": "Jingzicun",
+        "country": "China",
+        "region": "Shandong",
+        "lat": "37.549",
+        "lon": "122.121",
+        "timezone_id": "Asia/Shanghai",
+        "localtime": "2024-10-21 13:38",
+        "localtime_epoch": 1729517880,
+        "utc_offset": "8.0"
+    },
+    "current": {
+        "observation_time": "05:38 AM",
+        "temperature": 14,
+        "weather_code": 176,
+        "weather_icons": [
+            "https://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0009_light_rain_showers.png"
+        ],
+        "weather_descriptions": [
+            "Patchy rain nearby"
+        ],
+        "wind_speed": 11,
+        "wind_degree": 298,
+        "wind_dir": "WNW",
+        "pressure": 1021,
+        "precip": 0,
+        "humidity": 84,
+        "cloudcover": 100,
+        "feelslike": 14,
+        "uv_index": 1,
+        "visibility": 10,
+        "is_day": "yes"
+    }
+}

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/fatih/color"
 	"github.com/mbndr/figlet4go"
 
 	"maxnormand/get-my-info/api"
@@ -19,7 +20,8 @@ func renderWelcomeText() string {
 }
 
 func printApiCall(text string) string {
-	message := fmt.Sprintf("Going to get your %s info...", text)
+	green := color.New(color.FgGreen).SprintFunc()
+	message := fmt.Sprintf(green("Going to get your %s info...\n"), text)
 	return message
 }
 
@@ -29,6 +31,7 @@ func main() {
 	for {
 		fmt.Print("Enter 'chess' to get the daily chess Puzzle" +
 			"\nor 'cat' to get cat facts" +
+			"\nor 'weather' to get the local weather" +
 			"\nor 'exit' to leave the application:\n")
 
 		var input string
@@ -38,6 +41,13 @@ func main() {
 		}
 
 		switch strings.ToLower(input) {
+		case "weather":
+			fmt.Println(printApiCall("Weather"))
+			res, err := api.GetWeather()
+			if err != nil {
+				panic(err)
+			}
+			fmt.Println(res)
 		case "chess":
 			// TODO: could have a handle API call function that does this
 			fmt.Println(printApiCall("Chess"))
@@ -50,11 +60,11 @@ func main() {
 			fmt.Println()
 		case "cat":
 			fmt.Println(printApiCall("Cat"))
-			catFacts, err := api.GetCatFacts()
+			res, err := api.GetCatFacts()
 			if err != nil {
 				panic(err)
 			}
-			fmt.Println(catFacts)
+			fmt.Println(res)
 		case "exit":
 			fmt.Println("Exiting...")
 			return
